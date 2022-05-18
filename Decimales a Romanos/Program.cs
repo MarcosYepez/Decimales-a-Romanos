@@ -37,7 +37,18 @@ namespace Decimales_a_Romanos
             var roman_numerals = new StringBuilder();
             var index_num = 0;
             while (n != 0)
-            { }
+            {
+                if (n>= int_value[index_num])
+                {
+                    n -= int_value[index_num];
+                    roman_numerals.Append(roman_symbol[index_num]);
+                }
+                else 
+                {
+                    index_num++;
+                }
+            }
+            return roman_numerals.ToString();
         }
     }
 }
